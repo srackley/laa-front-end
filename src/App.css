@@ -21,9 +21,6 @@
   font-size: large;
 }
 
-.App-hero {
-}
-
 .App-blocks {
   display: flex;
   justify-content: space-around;
@@ -39,5 +36,9 @@
   margin: 5px;
 }
 
+.App-form input{
+  display: flex;
+  margin: auto;
+}
 
 
