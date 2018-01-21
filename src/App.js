@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import logo from './LAA_Logo.png';
 import './App.css';
+import districts from 'congressional-districts';
+import axios from 'axios'
 
 class App extends Component {
 
@@ -13,9 +15,18 @@ class App extends Component {
     this.setState({ showForm: true })
   }
 
-  onSubmitHander = (event) => {
+  onSubmitHandler = (event) => {
     event.preventDefault();
-    this.setState({ formSubmitted: true })
+    const zipCode = event.target.zipCodeField.value.startsWith('0') ? event.target.zipCodeField.value.slice(1) : event.target.zipCodeField.value
+    const district = districts.getDistricts(zipCode)[0];
+    const phone_number = event.target.phoneNumberField.value;
+    const state = event.target.stateField.value;
+    const user = {phone_number, state, district}
+
+    axios.post('/api/v1/users', {user}).then( res => console.log('success'))
+
+    this.setState({ formSubmitted: true });
+  
   }
 
   render() {
@@ -29,15 +40,15 @@ class App extends Component {
           <p>Learn how your legislators are voting and let them know how you feel</p>
           {this.state.showForm ?
             this.state.formSubmitted ? <h1>Submitted!</h1> :
-              <form className="App-form" onSubmit={this.onSubmitHander}>
+              <form className="App-form" onSubmit={this.onSubmitHandler}>
                 <h2>Sign up for SMS</h2>
                 <h2>Where do you live?</h2>
                 <input type="text" placeholder="street address" />
-                <input type="text" placeholder="city" />
-                <input type="text" placeholder="state" />
-                <input type="text" placeholder="zipcode" />
+                <input type="text" placeholder="city"/>
+                <input type="text" placeholder="state" name="stateField" />
+                <input type="text" placeholder="zipcode"  name="zipCodeField"/>
                 <label>Mobile Number</label>
-                <input type="text" />
+                <input type="text" name="phoneNumberField"/>
                 <button style={{ backgroundColor: 'red', color: 'white' }}>Sign Up</button>
               </form> : <button onClick={this.onClickHandler}> Get in the LAA Loop!</button>
           }
