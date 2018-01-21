@@ -1,0 +1,43 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 80px;
+}
+
+.App-header {
+  display:flex;
+  justify-content: center;
+  height: 50px;
+  padding: 20px;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.App-hero {
+}
+
+.App-blocks {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+}
+
+.App-blocks li{
+  height: 100px;
+  width: 100px;
+  border: 2px solid black;
+  background-color: blue;
+  color: white;
+  margin: 5px;
+}
+
+
+
