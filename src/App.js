@@ -36,7 +36,6 @@ class App extends Component {
           <p><i>Your Home For Legislative Accountability</i></p>
         </header>
         <div className="App-hero">
-          <p>Learn how your legislators are voting and let them know how you feel</p>
           {this.state.showForm ?
             this.state.formSubmitted ? <h1>Submitted!</h1> :
               <form className="App-form" onSubmit={this.onSubmitHandler}>
@@ -49,7 +48,10 @@ class App extends Component {
                 <label>Mobile Number</label>
                 <input type="text" name="phoneNumberField"/>
                 <button className="button shadow">Sign Up</button>
-              </form> : <button onClick={this.onClickHandler} className="button shadow"> Get in the LAA Loop!</button>
+              </form> : <div>
+              <p>Learn how your legislators are voting and let them know how you feel</p>
+              <button onClick={this.onClickHandler} className="button shadow"> Get in the LAA Loop!</button>
+              </div>
           }
           <ul className="App-blocks">
             <li>
