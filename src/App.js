@@ -41,7 +41,7 @@ class App extends Component {
             this.state.formSubmitted ? <h1>Submitted!</h1> :
               <form className="App-form" onSubmit={this.onSubmitHandler}>
                 <h2>Sign up for SMS</h2>
-                <h2>Where do you live?</h2>
+                <h3>Where do you live?</h3>
                 <input type="text" placeholder="street address" />
                 <input type="text" placeholder="city"/>
                 <input type="text" placeholder="state" name="stateField" />

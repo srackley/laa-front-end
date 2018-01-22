@@ -1,50 +1,57 @@
 .App {
-  text-align: center;
-  padding: 0 5vw;
-
-  .App-header {
-    display:flex;
-    justify-content: left;
-    height: 50px;
-    margin: 20px 0;
-    align-items: center;
-
-    .App-logo {
-      height: 80px;
+    text-align: center;
+    padding: 0 5vw;
+    .App-header {
+        display: flex;
+        justify-content: left;
+        height: 50px;
+        margin: 20px 0;
+        align-items: center;
+        .App-logo {
+            height: 80px;
+        }
     }
-  }
+    .App-blocks {
+        display: flex;
+        padding: 0;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+    .App-blocks li {
+        height: 100px;
+        width: 100px;
+        border-radius: 5px;
+        border: 2px solid black;
+        background-color: $primary-color;
+        color: white;
+        margin: 5px;
+    }
+    .App-form {
+      text-align: left;
 
-  .App-blocks {
-    display: flex;
-    padding: 0;
-    justify-content: space-evenly;
-    list-style-type: none;
-  }
-
-  .App-blocks li{
-    height: 100px;
-    width: 100px;
-    border-radius: 5px;
-    border: 2px solid black;
-    background-color: $primary-color;
-    color: white;
-    margin: 5px;
-  }
-
-  .App-form input{
-    display: flex;
-    margin: 10px auto;
-    padding: 5px;
-  }
-
-  .button {
-    background-color: $accent-color;
-    border: none;
-    color: $light-color;
-    padding: 15px 25px;
-    border-radius: 5px;
-    font-size: 18px;
-    font-weight: 100;
-  }
-
+        input {
+            display: flex;
+            text-align: left;
+            margin: 10px auto;
+            padding: 5px;
+        }
+    }
+    .button {
+        background-color: $accent-color;
+        border: none;
+        color: $light-color;
+        padding: 15px 25px;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: 100;
+    }
+    @media screen and (max-width: 600px) {
+        .button {
+            width: 100%;
+        }
+        .App-form input {
+            width: 100%;
+        }
+    }
+    @media screen and (min-width: 600px) {}
 }

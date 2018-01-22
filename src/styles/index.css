@@ -42,10 +42,13 @@ body {
     background-color: #002868;
     color: white;
     margin: 5px; }
-  .App .App-form input {
-    display: flex;
-    margin: 10px auto;
-    padding: 5px; }
+  .App .App-form {
+    text-align: left; }
+    .App .App-form input {
+      display: flex;
+      text-align: left;
+      margin: 10px auto;
+      padding: 5px; }
   .App .button {
     background-color: #EC4F52;
     border: none;
@@ -54,3 +57,8 @@ body {
     border-radius: 5px;
     font-size: 18px;
     font-weight: 100; }
+  @media screen and (max-width: 600px) {
+    .App .button {
+      width: 100%; }
+    .App .App-form input {
+      width: 100%; } }
