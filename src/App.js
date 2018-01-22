@@ -8,15 +8,42 @@ class App extends Component {
   state = {
     showForm: false,
     formSubmitted: false,
+    showAddressForm: null,
+    currentLocation: null,
   }
 
   onClickHandler = () => {
     this.setState({ showForm: true })
   }
 
+  onOptionChange = (event) => {
+    this.setState({
+      showAddressForm: event.target.value
+    })
+  }
+
+  getLocation = () => {
+    const geolocation = navigator.geolocation;
+    const location = new Promise((resolve, reject) => {
+      if(!geolocation) {
+        reject(new Error('Not Supported'));
+      }
+
+      geolocation.getCurrentPosition((position) => {
+        resolve(this.setState({currentLocation: position.coords}));
+        console.log(this.state)
+      }, () => {
+        reject (new Error('Permission denied'));
+      })
+    })
+
+  }
+
   onSubmitHandler = (event) => {
     event.preventDefault();
-    const zipCode = event.target.zipCodeField.value.startsWith('0') ? event.target.zipCodeField.value.slice(1) : event.target.zipCodeField.value
+    const zipCode = event.target.zipCodeField.value.startsWith('0')
+    ? event.target.zipCodeField.value.slice(1)
+    : event.target.zipCodeField.value
     const district = districts.getDistricts(zipCode)[0];
     const phone_number = event.target.phoneNumberField.value;
     const state = event.target.stateField.value;
@@ -41,7 +68,33 @@ class App extends Component {
               <form className="App-form" onSubmit={this.onSubmitHandler}>
                 <h2>Sign up for SMS</h2>
                 <h3>Where do you live?</h3>
-                <input
+                <label>
+                  <input
+                  type="radio"
+                  id="geolocate"
+                  name="location"
+                  value="false"
+                  checked={this.state.showAddressForm==="false"}
+                  onChange={this.onOptionChange}
+                  onClick={this.getLocation}
+                  />
+                  <span>Use Current Location</span>
+                </label>
+                <label>
+                  <input
+                  type="radio"
+                  id="inputLocation"
+                  name="location"
+                  value="true"
+                  checked={this.state.showAddressForm==="true"}
+                  onChange={this.onOptionChange}
+                  />
+                  <span> No Thanks, I'll enter my address </span>
+                </label>
+              {this.state.showAddressForm === "true"
+                ?
+              <div>
+              <input
                 type="text"
                 placeholder="street address"
                 className="full"
@@ -70,6 +123,10 @@ class App extends Component {
                 className="full"
                 />
                 <button className="button shadow">Sign Up</button>
+              </div>
+              :
+              null
+              }
               </form> : <div>
               <p>Learn how your legislators are voting and let them know how you feel</p>
               <button onClick={this.onClickHandler} className="button shadow"> Get in the LAA Loop!</button>

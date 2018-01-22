@@ -27,7 +27,7 @@
         margin: 5px;
     }
     .App-form {
-        input {
+        input[type="text"] {
             background-color: $light-color;
             font-family: $main-font;
             font-size: calc(14px + 1vw);
@@ -38,6 +38,48 @@
             margin: 15px auto;
             padding: 6px 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.24);
+        }
+        input[type="radio"] {
+            border: 0;
+            clip: rect(0 0 0 0);
+            height: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+            width: 1px;
+        }
+
+        label {
+          display: block;
+          line-height: 2;
+          font-size: 1em;
+        }
+
+        [type="radio"]+span {
+            display: block;
+        }
+        [type="radio"]+span:before {
+            content: '';
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            vertical-align: -0.25em;
+            border-radius: 1em;
+            border: 0.125em solid #fff;
+            box-shadow: 0 0 0 0.15em #000;
+            margin-right: 0.75em;
+            transition: 0.5s ease all;
+        }
+        [type="radio"]:checked+span:before {
+            background: $accent-color;
+            box-shadow: 0 0 0 0.25em #000;
+        }
+        /* never forget focus styling */
+        [type="radio"]:focus+span:after {
+            font-size: 1.5em;
+            line-height: 1;
+            vertical-align: -0.125em;
         }
     }
     .button {

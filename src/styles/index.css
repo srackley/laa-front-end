@@ -44,17 +44,52 @@ body {
     background-color: #002868;
     color: white;
     margin: 5px; }
-  .App .App-form input {
-    background-color: #FFFFFF;
-    font-family: "Crimson Text", serif;
-    font-size: calc(14px + 1vw);
-    font-style: italic;
-    border: 1px solid grey;
-    display: flex;
-    text-align: left;
-    margin: 15px auto;
-    padding: 6px 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.24); }
+  .App .App-form {
+    /* never forget focus styling */ }
+    .App .App-form input[type="text"] {
+      background-color: #FFFFFF;
+      font-family: "Crimson Text", serif;
+      font-size: calc(14px + 1vw);
+      font-style: italic;
+      border: 1px solid grey;
+      display: flex;
+      text-align: left;
+      margin: 15px auto;
+      padding: 6px 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.24); }
+    .App .App-form input[type="radio"] {
+      border: 0;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px; }
+    .App .App-form label {
+      display: block;
+      line-height: 2;
+      font-size: 1em; }
+    .App .App-form [type="radio"] + span {
+      display: block; }
+    .App .App-form [type="radio"] + span:before {
+      content: '';
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.25em;
+      border-radius: 1em;
+      border: 0.125em solid #fff;
+      box-shadow: 0 0 0 0.15em #000;
+      margin-right: 0.75em;
+      transition: 0.5s ease all; }
+    .App .App-form [type="radio"]:checked + span:before {
+      background: #EC4F52;
+      box-shadow: 0 0 0 0.25em #000; }
+    .App .App-form [type="radio"]:focus + span:after {
+      font-size: 1.5em;
+      line-height: 1;
+      vertical-align: -0.125em; }
   .App .button {
     background-color: #EC4F52;
     border: none;
