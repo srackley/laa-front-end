@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import logo from './LAA_Logo.png';
-import './App.css';
 import districts from 'congressional-districts';
 import axios from 'axios'
 
@@ -26,7 +25,7 @@ class App extends Component {
     axios.post('/api/v1/users', {user}).then( res => console.log('success'))
 
     this.setState({ formSubmitted: true });
-  
+
   }
 
   render() {
@@ -34,7 +33,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <p>Your Home For Legislative Accountability</p>
+          <p><i>Your Home For Legislative Accountability</i></p>
         </header>
         <div className="App-hero">
           <p>Learn how your legislators are voting and let them know how you feel</p>
@@ -49,8 +48,8 @@ class App extends Component {
                 <input type="text" placeholder="zipcode"  name="zipCodeField"/>
                 <label>Mobile Number</label>
                 <input type="text" name="phoneNumberField"/>
-                <button style={{ backgroundColor: 'red', color: 'white' }}>Sign Up</button>
-              </form> : <button onClick={this.onClickHandler}> Get in the LAA Loop!</button>
+                <button className="button shadow">Sign Up</button>
+              </form> : <button onClick={this.onClickHandler} className="button shadow"> Get in the LAA Loop!</button>
           }
           <ul className="App-blocks">
             <li>
@@ -59,7 +58,7 @@ class App extends Component {
             </li>
             <li>
               <p>2</p>
-              <p>Find your legislator</p>
+              <p>Find your legislators</p>
             </li>
             <li>
               <p>3</p>
