@@ -45,14 +45,20 @@ body {
     color: white;
     margin: 5px; }
   .App .App-form {
+    margin: auto;
+    max-width: 500px;
+    text-align: left;
     /* never forget focus styling */ }
+    .App .App-form .full {
+      width: 100%; }
+    .App .App-form .half {
+      width: 47%; }
     .App .App-form input[type="text"] {
       background-color: #FFFFFF;
       font-family: "Crimson Text", serif;
       font-size: calc(14px + 1vw);
       font-style: italic;
       border: 1px solid grey;
-      display: flex;
       text-align: left;
       margin: 15px auto;
       padding: 6px 12px;
@@ -101,13 +107,7 @@ body {
     font-weight: 100; }
   @media screen and (max-width: 600px) {
     .App .button {
-      width: 100%; }
-    .App .App-form {
-      text-align: left; }
-      .App .App-form .full {
-        width: 100%; }
-      .App .App-form .half {
-        width: 46%; } }
+      width: 100%; } }
   @media screen and (min-width: 600px) {
     .App input {
       width: calc(600px + 1vw); } }

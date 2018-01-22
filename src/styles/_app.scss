@@ -27,13 +27,22 @@
         margin: 5px;
     }
     .App-form {
+      margin: auto;
+      max-width: 500px;
+      text-align: left;
+      .full {
+        width: 100%;
+    }
+      .half {
+        width: 47%;
+    }
+
         input[type="text"] {
             background-color: $light-color;
             font-family: $main-font;
             font-size: calc(14px + 1vw);
             font-style: italic;
             border: 1px solid grey;
-            display: flex;
             text-align: left;
             margin: 15px auto;
             padding: 6px 12px;
@@ -95,15 +104,6 @@
     @media screen and (max-width: 600px) {
         .button {
             width: 100%;
-        }
-        .App-form {
-            text-align: left;
-            .full {
-                width: 100%;
-            }
-            .half {
-                width: 46%;
-            }
         }
     }
     @media screen and (min-width: 600px) {
