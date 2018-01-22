@@ -134,20 +134,28 @@ class App extends Component {
           }
           <ul className="App-blocks">
             <li>
-              <p>1</p>
+            <div>
+              <p className="num">1</p>
               <p>Sign Up</p>
+              </div>
             </li>
             <li>
-              <p>2</p>
+            <div>
+              <p className="num">2</p>
               <p>Find your legislators</p>
+              </div>
             </li>
             <li>
-              <p>3</p>
+            <div>
+              <p className="num">3</p>
               <p>Get text updates</p>
+              </div>
             </li>
             <li>
-              <p>4</p>
+            <div>
+              <p className="num">4</p>
               <p>Take Action</p>
+              </div>
             </li>
           </ul>
           <h1>Why It Matters</h1>

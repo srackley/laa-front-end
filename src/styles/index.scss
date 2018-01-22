@@ -4,6 +4,7 @@ $light-color: #FFFFFF;
 $medium-color: #D8D8D8;
 $accent-color: #EC4F52;
 $main-font: 'Crimson Text', serif;
+$secondary-font: 'Roboto', sans-serif;
 
 * {
   box-sizing: border-box;
@@ -32,6 +33,6 @@ body {
   }
 }
 
-
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text');
 @import '_app'

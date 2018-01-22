@@ -2,6 +2,7 @@
     text-align: center;
     padding: 0 5vw;
     .App-header {
+        font-size: calc(12px + 1vw);
         display: flex;
         justify-content: left;
         height: 50px;
@@ -13,30 +14,55 @@
     }
     .App-blocks {
         display: flex;
-        padding: 0;
+        flex-flow: row wrap;
+        padding: 40px 0;
         justify-content: space-evenly;
         list-style-type: none;
-    }
-    .App-blocks li {
-        height: 100px;
-        width: 100px;
-        border-radius: 5px;
-        border: 2px solid black;
-        background-color: $primary-color;
-        color: white;
-        margin: 5px;
-    }
-    .App-form {
-      margin: auto;
-      max-width: 500px;
-      text-align: left;
-      .full {
-        width: 100%;
-    }
-      .half {
-        width: 47%;
+
+        li {
+            display: flex;
+            border-radius: 5px;
+            border: 2px solid black;
+            background-color: $primary-color;
+            color: white;
+            margin-bottom: 20px;
+            padding: 15px;
+            align-items: center;
+            justify-content: center;
+
+
+            div {
+                margin: auto;
+                height: 100%;
+                justify-content: stretch;
+            p {
+                font-family: $secondary-font;
+                padding: 0;
+                margin: 0;
+                font-size: calc(8px + 1vw);
+            }
+
+            .num {
+                font-size: calc(14px + 1vw);
+                padding-bottom: 10px;
+            }
+        }
+        }
     }
 
+    .App-form {
+        margin: auto;
+        max-width: 500px;
+        text-align: left;
+        .full {
+            width: 100%;
+        }
+        .half {
+            width: 47%;
+        }
+        h2 {
+            text-align: center;
+        }
         input[type="text"] {
             background-color: $light-color;
             font-family: $main-font;
@@ -44,7 +70,7 @@
             font-style: italic;
             border: 1px solid grey;
             text-align: left;
-            margin: 15px auto;
+            margin: 12px auto;
             padding: 6px 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.24);
         }
@@ -58,13 +84,11 @@
             position: absolute;
             width: 1px;
         }
-
         label {
-          display: block;
-          line-height: 2;
-          font-size: 1em;
+            display: block;
+            line-height: 2;
+            font-size: 1em;
         }
-
         [type="radio"]+span {
             display: block;
         }
@@ -105,10 +129,21 @@
         .button {
             width: 100%;
         }
+
+        .App-blocks li {
+            width: 23%;
+        }
     }
     @media screen and (min-width: 600px) {
         input {
             width: calc(600px + 1vw)
+        }
+
+        .App-blocks li {
+            min-height: 120px;
+            min-width: 170px;
+            max-width: 300px;
+            width: 20vw;
         }
     }
     .right {
