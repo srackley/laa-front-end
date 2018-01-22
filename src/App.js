@@ -31,7 +31,7 @@ class App extends Component {
 
       geolocation.getCurrentPosition((position) => {
         resolve(this.setState({currentLocation: position.coords}));
-        console.log(this.state)
+        console.log(this.state.currentLocation)
       }, () => {
         reject (new Error('Permission denied'));
       })
