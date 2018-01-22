@@ -27,15 +27,17 @@
         margin: 5px;
     }
     .App-form {
-      text-align: left;
-
         input {
+            background-color: $light-color;
+            font-family: $main-font;
+            font-size: calc(14px + 1vw);
+            font-style: italic;
             border: 1px solid grey;
             display: flex;
             text-align: left;
             margin: 15px auto;
-            padding: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.25), 0 3px 6px rgba(0,0,0,0.24);
+            padding: 6px 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25), 0 3px 6px rgba(0, 0, 0, 0.24);
         }
     }
     .button {
@@ -43,6 +45,7 @@
         border: none;
         color: $light-color;
         padding: 15px 25px;
+        margin: 15px 0;
         border-radius: 5px;
         font-size: 18px;
         font-weight: 100;
@@ -51,9 +54,25 @@
         .button {
             width: 100%;
         }
-        .App-form input {
-            width: 100%;
+        .App-form {
+            text-align: left;
+            .full {
+                width: 100%;
+            }
+            .half {
+                width: 46%;
+            }
         }
     }
-    @media screen and (min-width: 600px) {}
+    @media screen and (min-width: 600px) {
+        input {
+            width: calc(600px + 1vw)
+        }
+    }
+    .right {
+        float: right;
+    }
+    .left {
+        float: left;
+    }
 }

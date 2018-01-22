@@ -41,12 +41,34 @@ class App extends Component {
               <form className="App-form" onSubmit={this.onSubmitHandler}>
                 <h2>Sign up for SMS</h2>
                 <h3>Where do you live?</h3>
-                <input type="text" placeholder="street address" />
-                <input type="text" placeholder="city"/>
-                <input type="text" placeholder="state" name="stateField" />
-                <input type="text" placeholder="zipcode"  name="zipCodeField"/>
-                <label>Mobile Number</label>
-                <input type="text" name="phoneNumberField"/>
+                <input
+                type="text"
+                placeholder="street address"
+                className="full"
+                />
+                <input
+                type="text"
+                placeholder="city"
+                className="full"
+                />
+                <input
+                type="text"
+                placeholder="state" name="stateField"
+                className="half left"
+                />
+                <input
+                type="text"
+                placeholder="zipcode"
+                name="zipCodeField"
+                className="half right"
+                />
+                <label>Mobile Number:</label>
+                <input
+                type="text"
+                name="phoneNumberField"
+                placeholder="###-###-####"
+                className="full"
+                />
                 <button className="button shadow">Sign Up</button>
               </form> : <div>
               <p>Learn how your legislators are voting and let them know how you feel</p>
