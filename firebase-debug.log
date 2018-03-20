@@ -1,0 +1,32 @@
+[debug] [2018-03-20T15:57:37.886Z] ----------------------------------------------------------------------
+[debug] [2018-03-20T15:57:37.888Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --project votebulletin
+[debug] [2018-03-20T15:57:37.888Z] CLI Version:   3.17.6
+[debug] [2018-03-20T15:57:37.888Z] Platform:      darwin
+[debug] [2018-03-20T15:57:37.888Z] Node Version:  v9.4.0
+[debug] [2018-03-20T15:57:37.889Z] Time:          Tue Mar 20 2018 11:57:37 GMT-0400 (EDT)
+[debug] [2018-03-20T15:57:37.889Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-03-20T15:57:37.898Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-03-20T15:57:37.898Z] > authorizing via signed-in user
+[debug] [2018-03-20T15:57:37.900Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/votebulletin  
+  
+ Tue Mar 20 2018 11:57:37 GMT-0400 (EDT)
+[debug] [2018-03-20T15:57:38.186Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T15:57:38.186Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/votebulletin/tokens  
+  
+ Tue Mar 20 2018 11:57:38 GMT-0400 (EDT)
+[debug] [2018-03-20T15:57:38.530Z] <<< HTTP RESPONSE 200
+[debug] [2018-03-20T15:57:38.531Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/votebulletin  
+  
+ Tue Mar 20 2018 11:57:38 GMT-0400 (EDT)
+[debug] [2018-03-20T15:57:38.902Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/shelby/Desktop/Projects/laa-front-end'...
+[info] 
+[debug] [2018-03-20T15:57:38.904Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/674416912957/clients/_:getWebAppConfig  
+  
+ Tue Mar 20 2018 11:57:38 GMT-0400 (EDT)
+[debug] [2018-03-20T15:57:39.502Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+
