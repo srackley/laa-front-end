@@ -58,7 +58,7 @@ exports.fetchSpecifics = functions.database.ref('/bills/{voteId}').onCreate((eve
     url: voteUri
   }).then((response) => {
     const data = response.data.results.votes.vote;
-    admin.database().ref('votes/').update({ [event.params.voteId]: data.positions });
+    admin.database().ref('votess/').update({ [event.params.voteId]: data.positions });
   }).catch(err => console.log(err));
 });
 
